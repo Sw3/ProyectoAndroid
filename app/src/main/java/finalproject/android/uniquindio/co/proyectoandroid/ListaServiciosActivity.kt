@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
 import finalproject.android.uniquindio.co.proyectoandroid.Adaptadores.ServicioAdapter
+import finalproject.android.uniquindio.co.proyectoandroid.Business.Repository
 import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Servicio
 import kotlinx.android.synthetic.main.activity_lista_servicios.*
 
@@ -14,20 +15,14 @@ class ListaServiciosActivity : AppCompatActivity() {
 
     lateinit var listaServicios : ArrayList<Servicio>
     lateinit var adaptador : ServicioAdapter
+    lateinit var repositorio : Repository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_servicios)
 
-
+        repositorio = Repository()
         listaServicios = ArrayList<Servicio>()
-        listaServicios.add(Servicio("Piscina", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("cancha", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("sendero", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("otra cosa", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("Piscina", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("cancha", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("sendero", "este es un servicio de la universidad", "alguna foto"))
-        listaServicios.add(Servicio("otra cosa", "este es un servicio de la universidad", "alguna foto"))
+        listaServicios = repositorio.getServicios()
         adaptador = ServicioAdapter(listaServicios, applicationContext)
         listaServiciosRecycler.adapter = adaptador
         listaServiciosRecycler. layoutManager = LinearLayoutManager( this,
