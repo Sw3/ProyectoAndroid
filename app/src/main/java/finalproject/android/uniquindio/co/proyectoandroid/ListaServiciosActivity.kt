@@ -1,8 +1,11 @@
 package finalproject.android.uniquindio.co.proyectoandroid
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import finalproject.android.uniquindio.co.proyectoandroid.Adaptadores.ServicioAdapter
@@ -27,7 +30,31 @@ class ListaServiciosActivity : AppCompatActivity() {
         listaServiciosRecycler.adapter = adaptador
         listaServiciosRecycler. layoutManager = LinearLayoutManager( this,
                 LinearLayoutManager. VERTICAL , false )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mainmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when(item?.title){
+            "opcion1"->{
+                val intento1 = Intent(this, C_servicio::class.java)
+                startActivity(intento1)
+            }
+            "opcion2"->{
+                val intento1 = Intent(this, C_servicio::class.java)
+                startActivity(intento1)
+            }
+            "opcion3"->{
+                val intento1 = Intent(this, C_servicio::class.java)
+                startActivity(intento1)
+            }
+        }
 
 
+        return super.onOptionsItemSelected(item)
     }
 }
