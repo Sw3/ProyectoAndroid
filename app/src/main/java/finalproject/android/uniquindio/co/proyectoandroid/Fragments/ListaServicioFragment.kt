@@ -1,14 +1,17 @@
 package finalproject.android.uniquindio.co.proyectoandroid.Fragments
 
+import android.app.Activity
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.LinearLayoutManager
+import android.view.*
+import finalproject.android.uniquindio.co.proyectoandroid.Adaptadores.ServicioAdapter
+import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Servicio
 
 import finalproject.android.uniquindio.co.proyectoandroid.R
+import kotlinx.android.synthetic.main.activity_lista_servicios.*
 
 /**
  * A simple [Fragment] subclass.
@@ -18,21 +21,10 @@ import finalproject.android.uniquindio.co.proyectoandroid.R
  * Use the [ListaServicioFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ListaServicioFragment : Fragment() {
-
-    // TODO: Rename and change types of parameters
-    private var mParam1: String? = null
-    private var mParam2: String? = null
-
-    private var mListener: OnFragmentInteractionListener? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            mParam1 = arguments.getString(ARG_PARAM1)
-            mParam2 = arguments.getString(ARG_PARAM2)
-        }
-    }
+class ListaServicioFragment : Fragment(),  ServicioAdapter.OnClickAdaptadorDePersonaje {
+    lateinit var personajes:ArrayList<Servicio>
+    lateinit var adaptador: ServicioAdapter
+    private lateinit var listener:OnPersonajeSeleccionadoListener
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -40,63 +32,68 @@ class ListaServicioFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_lista_servicio, container, false)
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        if (mListener != null) {
-            mListener!!.onFragmentInteraction(uri)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        adaptador = ServicioAdapter(this, personajes)
+        listaServiciosRecycler.adapter = adaptador
+        listaServiciosRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        // listaPersonajes.layoutManager = GridLayoutManager(this, 2)
+
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        /**
+        when (item?.itemId){
+            R.id.menu_agregar -> {
+                mostrarAgregarPersona()
+                //personajes.add(0, Personaje("Duffman", Date()) )
+                adaptador.notifyItemInserted(0)
+            }
+            R.id.menu_eliminar -> {
+                personajes.removeAt(0 )
+                adaptador.notifyItemRemoved(0)
+            }
+            R.id.menu_modificar -> {
+                val aux:Personaje = personajes.get(1)
+                personajes.set(1, personajes.get(2) )
+                personajes.set(2, aux )
+                adaptador.notifyItemMoved(1,2)
+            }
         }
+        **/
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            mListener = context
-        } else {
-            throw RuntimeException(context!!.toString() + " must implement OnFragmentInteractionListener")
+        if( context is Activity){
+            try {
+                listener = context as OnPersonajeSeleccionadoListener
+            }catch (e:ClassCastException){
+                throw ClassCastException("${activity.toString()} debe implementar la interfaz OnPersonajeSeleccionadoListener")
+            }
         }
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        mListener = null
+    interface OnPersonajeSeleccionadoListener{
+        fun onPersonajeSeleccionado(pos:Int)
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
-     */
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+    override fun onClickPosition(pos: Int) {
+        listener.onPersonajeSeleccionado(pos)
     }
 
-    companion object {
-        // TODO: Rename parameter arguments, choose names that match
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private val ARG_PARAM1 = "param1"
-        private val ARG_PARAM2 = "param2"
-
+    fun mostrarAgregarPersona(){
         /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListaServicioFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        fun newInstance(param1: String, param2: String): ListaServicioFragment {
-            val fragment = ListaServicioFragment()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
-            fragment.arguments = args
-            return fragment
-        }
+        val agregarPersonaje = AgregarPersonajeFragment()
+        agregarPersonaje.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogoTitulo)
+        agregarPersonaje.show(fragmentManager,"AgregarPersonaje")
+        **/
     }
 }// Required empty public constructor
