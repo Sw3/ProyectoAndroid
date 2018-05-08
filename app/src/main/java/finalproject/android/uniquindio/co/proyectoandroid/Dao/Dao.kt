@@ -1,8 +1,6 @@
 package finalproject.android.uniquindio.co.proyectoandroid.Dao
 
-import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Cliente
-import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Encargado
-import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Servicio
+import finalproject.android.uniquindio.co.proyectoandroid.Entidades.*
 
 /**
  * Created by str_william on 07/05/2018.
@@ -47,6 +45,13 @@ class Dao {
     }
     fun addServicio(servicio: Servicio){
         servicios.add(servicio)
+    }
+
+    fun getCliente(): ArrayList<Cliente> {
+        return clientes
+    }
+    fun addCliente(cliente: Cliente){
+        clientes.add(cliente)
     }
 
 

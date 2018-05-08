@@ -25,6 +25,7 @@
             tools:layout_editor_absoluteY="52dp">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/cl_ced"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="cedula" />
@@ -37,6 +38,7 @@
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/cl_nombre"
                 android:layout_height="wrap_content"
                 android:hint="Nombre" />
         </android.support.design.widget.TextInputLayout>
@@ -49,6 +51,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/cl_email"
                 android:hint="email" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -60,6 +63,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/cl_tipo"
                 android:hint="Tipo" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -71,13 +75,15 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/cl_tel"
                 android:hint="Telefono" />
         </android.support.design.widget.TextInputLayout>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar"
-            />
+            android:id="@+id/btn_crearcliente"
+            android:text="Guardar" />
 
 
     </android.support.v7.widget.LinearLayoutCompat>
