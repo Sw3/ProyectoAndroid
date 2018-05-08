@@ -16,4 +16,9 @@
     <string name="telefono">Teléfono</string>
     <string name="nuevoEncargado">Nuevo encargado</string>
     <string name="nuevoServicio">Nuevo servicio</string>
+
+    <string name="menuServicio">Servicios</string>
+    <string name="menuEncargados">Encargados</string>
+    <string name="menuClientes">Clientes</string>
+    <string name="menuVistaUsuario">Ver como Usuario</string>
 </resources>

@@ -16,4 +16,9 @@
     <string name="telefono">Telephone</string>
     <string name="nuevoEncargado">New service administrator</string>
     <string name="nuevoServicio">New Service</string>
+
+    <string name="menuServicio">Services</string>
+    <string name="menuEncargados">Services administrators</string>
+    <string name="menuClientes">Clients</string>
+    <string name="menuVistaUsuario">See as User</string>
 </resources>

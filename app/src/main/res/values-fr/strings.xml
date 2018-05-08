@@ -14,6 +14,11 @@
     <string name="nuevoCLiente">Nouveau client</string>
     <string name="tipo">Type</string>
     <string name="telefono">Teléphone</string>
-    <string name="nuevoEncargado">Nouvel administrator du service</string>
+    <string name="nuevoEncargado">Nouvel gestionnaire</string>
     <string name="nuevoServicio">Nouvel service</string>
+
+    <string name="menuServicio"> Services </string>
+    <string name="menuEncargados">Gestionnaires</string>
+    <string name="menuClientes">Clients </string>
+    <string name="menuVistaUsuario">Afficher en tant qu´utilisateur</string>
 </resources>

@@ -39,16 +39,20 @@ class ListaServiciosActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when(item?.title){
-            "opcion1"->{
+        when(item?.itemId){
+            R.id.item0->{
                 val intento1 = Intent(this, C_servicio::class.java)
                 startActivity(intento1)
             }
-            "opcion2"->{
+            R.id.item1->{
+                val intento1 = Intent(this, Ccliente::class.java)
+                startActivity(intento1)
+            }
+            R.id.item2->{
                 val intento1 = Intent(this, Cencargado::class.java)
                 startActivity(intento1)
             }
-            "opcion3"->{
+            R.id.item3->{
                 val intento1 = Intent(this, Ccliente::class.java)
                 startActivity(intento1)
             }
