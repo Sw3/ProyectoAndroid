@@ -14,7 +14,7 @@
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nuevo cliente"
+            android:text="@string/nuevoCLiente"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 
@@ -28,7 +28,7 @@
                 android:id="@+id/cl_ced"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="cedula" />
+                android:hint="@string/cedula" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="200dp"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/cl_nombre"
                 android:layout_height="wrap_content"
-                android:hint="Nombre" />
+                android:hint="@string/nombre" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="200dp"
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cl_email"
-                android:hint="email" />
+                android:hint="@string/correo" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="200dp"
@@ -76,14 +76,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cl_tel"
-                android:hint="Telefono" />
+                android:hint="@string/telefono" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_crearcliente"
-            android:text="Guardar" />
+            android:text="@string/guardar" />
 
 
     </android.support.v7.widget.LinearLayoutCompat>

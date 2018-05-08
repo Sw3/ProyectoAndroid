@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ProyectoAndroid</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre">Nom</string>
+    <string name="cedula">Identification</string>
+    <string name="descripcion">Description</string>
+    <string name="correo">Courriel</string>
+    <string name="guardar">Sauvegarder</string>
+    <string name="ubicacion">Ubication</string>
+    <string name="horario">Emploi-du-temps</string>
+    <string name="tiposrv">Type de service</string>
+    <string name="nuevoCLiente">Nouveau client</string>
+    <string name="tipo">Type</string>
+    <string name="telefono">Teléphone</string>
+    <string name="nuevoEncargado">Nouvel administrator du service</string>
+    <string name="nuevoServicio">Nouvel service</string>
+</resources>
