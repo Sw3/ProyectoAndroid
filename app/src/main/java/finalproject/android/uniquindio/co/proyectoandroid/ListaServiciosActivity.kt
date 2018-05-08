@@ -45,11 +45,11 @@ class ListaServiciosActivity : AppCompatActivity() {
                 startActivity(intento1)
             }
             "opcion2"->{
-                val intento1 = Intent(this, C_servicio::class.java)
+                val intento1 = Intent(this, Cencargado::class.java)
                 startActivity(intento1)
             }
             "opcion3"->{
-                val intento1 = Intent(this, C_servicio::class.java)
+                val intento1 = Intent(this, Ccliente::class.java)
                 startActivity(intento1)
             }
         }
