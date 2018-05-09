@@ -9,22 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaServiciosActivity">
+        <activity android:name=".Activity.ListaServiciosActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".C_servicio">
+        <activity android:name=".Activity.C_servicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cencargado" />
-        <activity android:name=".Ccliente"></activity>
+        <activity android:name=".Activity.Cencargado" />
+        <activity android:name=".Activity.Ccliente"></activity>
     </application>
 
 </manifest>

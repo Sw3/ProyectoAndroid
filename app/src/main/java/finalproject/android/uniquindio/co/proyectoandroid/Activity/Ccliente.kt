@@ -1,4 +1,4 @@
-package finalproject.android.uniquindio.co.proyectoandroid
+package finalproject.android.uniquindio.co.proyectoandroid.Activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import finalproject.android.uniquindio.co.proyectoandroid.Business.Repository
 import finalproject.android.uniquindio.co.proyectoandroid.Entidades.Cliente
+import finalproject.android.uniquindio.co.proyectoandroid.R
 import kotlinx.android.synthetic.main.activity_ccliente.*
 
 class Ccliente : AppCompatActivity() {

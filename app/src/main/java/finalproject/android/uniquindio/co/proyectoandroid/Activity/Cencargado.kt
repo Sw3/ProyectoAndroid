@@ -1,7 +1,8 @@
-package finalproject.android.uniquindio.co.proyectoandroid
+package finalproject.android.uniquindio.co.proyectoandroid.Activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import finalproject.android.uniquindio.co.proyectoandroid.R
 
 class Cencargado : AppCompatActivity() {
 
